@@ -19,3 +19,12 @@ spring:
         - Path=/mds/**
         filters:
         - RewritePath=/mds/(?<path>.*), /$\{path}
+        
+      - id: mysql-server
+        uri: lb://mysql-server
+        predicates:
+        - Path=/mysql/**
+        filters:
+        - RewritePath=/mysql/(?<path>.*),/$\{path}
+
+   
